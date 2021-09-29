@@ -2,7 +2,7 @@
 // Don't run this willy-nilly, especially if you have new data beyond what is set by this file!
 
 const pgClient = require("./client");
-const rawCharacterData = require("../characters.json");
+const rawCharacterData = require("./characters.json");
 
 const runSeed = async () => {
     try {
@@ -17,7 +17,7 @@ const runSeed = async () => {
                 name VARCHAR(255) NOT NULL,
                 rosterNum VARCHAR(10) NOT NULL
             );
-        `);e
+        `);
 
         const preparedInsertSQL = `INSERT INTO characters (name, rosterNum) VALUES ($1, $2);`;
 
